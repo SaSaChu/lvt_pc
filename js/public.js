@@ -6,6 +6,7 @@
 
 $(function () {
 
+
   // 漢堡變換 + menu滑出
   $(document).ready(function() {
     $('#nav-icon3').click(function(){
@@ -23,6 +24,24 @@ $(function () {
 
     $('.se_menu').eq (0).click();
   });
+
+
+  $('.select').click(function() {
+    $('.select_open').toggleClass('select_show');
+
+    $('.select_open').eq (0).click();
+  });
+
+  // $('#top_btn').click (function () {
+  //   if ($(this).index () === 0) {
+      
+  //     $('html, body').animate ({ scrollTop: 100 }, 'slow');
+  //   } else if ($(this).index () === 1) {
+  //     $('html, body').animate ({ scrollTop: '-=500px' },'slow');
+  //   } else {
+  //     $('html, body').animate ({ scrollTop: '+=500px' },'slow');
+  //   }
+  // });
 
 
 });
