@@ -1028,22 +1028,68 @@ $c1: rgba(27, 27, 27, 1.00);
 
   .cent02 {
     margin-top: 40px;
-    padding: 0 10px;
+    padding: 0;
     position: relative;
+    height: 80px + 45px;
     @include clearfix();
-    
-    > div {
-      display: inline-block;
-      width: calc(100% / 6 - 20px);
-      margin: 0 10px;
-      float: left;
 
-      @include range-width(450px, 1280px) {
-        width: calc(100% / 4 - 20px);
-        &:nth-child(5), &:nth-child(6) {
-          display: none;
+    a {
+      position: absolute;
+      top: calc(50% - 40px / 2 - 40px + 20px);
+      display: inline-block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(14, 14, 15, .5);
+      text-decoration: none;
+      color: white;
+      font-size: 40px;
+      z-index: 2;
+
+      @include range-width(0, 1300px) {
+        top: calc(50% - 30px / 2 - 40px + 20px);
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+      }
+
+      &.logo_l {
+        left: -40px;
+
+        @include range-width(0, 1250px) {
+          left: 0;
+        }
+        @include range-width(1250px, 1300px) {
+          left: 0-30px / 2;
         }
       }
+      &.logo_r {
+        right: -40px;
+
+        @include range-width(0, 1250px) {
+          right: 0;
+        }
+        @include range-width(1250px, 1300px) {
+          right: 0-30px / 2;
+        }
+      }
+    }
+    .logos {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      @include range-width(0, 1250px) {
+        width: calc(100% - 30px * 2);
+        margin: 0 30px;
+      }
+      @include range-width(1250px, 1300px) {
+        width: calc(100% - 16px * 2);
+        margin: 0 16px;
+      };
+      overflow: hidden;
+      z-index: 1;
+
+      height: 80px + 45px;
 
       .p_logo {
         display: inline-block;
@@ -1057,58 +1103,107 @@ $c1: rgba(27, 27, 27, 1.00);
           height: 100%;
         }
       }
-      
+
       .p_type {
         display: inline-block;
         width: 100%;
+        height: 45px;
         padding: 10px 0;
         margin: 0;
         color: black;
         font-size: 18px; 
-      }
-    }
-
-    a {
-      display: inline-block;
-      position: absolute;
-      top: calc(50% - 45px);
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(14, 14, 15, .5);
-      text-decoration: none;
-      color: white;
-      font-size: 40px;
-
-      @include range-width(0, 1290px) {
-        top: calc(50% - 35px);
-        width: 30px;
-        height: 30px;
-        font-size: 30px;
-      }
-
-      &.logo_l {
-        left: -45px;
-
-        @include range-width(1290px, 1305px) {
-          left: -30px;
-        }
-
-        @include range-width(0, 1290px) {
-          left: -30px;
+        @include overflow-docx3();
+        @include range-width(0, 650px) {
+          font-size: 14px;
         }
       }
-      &.logo_r {
-        right: -45px;
 
-        @include range-width(1290px, 1305px) {
-          right: -30px;
-        }
+      > * {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-block;
+        height: 100%;
 
-        @include range-width(0, 1290px) {
-          right: -30px;
+        width: calc(100% / 6 - 20px);
+        margin: 0 10px;
+        @include transition(left .3s);
+      }
+      @for $i from 0 through 30 {
+        &[data-n="#{$i}"] {
+          > * {
+            @for $j from 1 through 30 {
+              &:nth-child(#{$j}) {
+                left: calc(#{(-1 - $i + $j)} * (100% / 6)); 
+              }
+            }
+          }
         }
       }
+      @include range-width(0, 650px) {
+        > * {
+          width: calc(100% / 2 - 20px);
+        }
+        @for $i from 0 through 30 {
+          &[data-n="#{$i}"] {
+            > * {
+              @for $j from 1 through 30 {
+                &:nth-child(#{$j}) {
+                  left: calc(#{(-1 - $i + $j)} * (100% / 2)); 
+                }
+              }
+            }
+          }
+        }
+      };
+      @include range-width(650px, 830px) {
+        > * {
+          width: calc(100% / 3 - 20px);
+        }
+        @for $i from 0 through 30 {
+          &[data-n="#{$i}"] {
+            > * {
+              @for $j from 1 through 30 {
+                &:nth-child(#{$j}) {
+                  left: calc(#{(-1 - $i + $j)} * (100% / 3)); 
+                }
+              }
+            }
+          }
+        }
+      };
+      @include range-width(830px, 1030px) {
+        > * {
+          width: calc(100% / 4 - 20px);
+        }
+        @for $i from 0 through 30 {
+          &[data-n="#{$i}"] {
+            > * {
+              @for $j from 1 through 30 {
+                &:nth-child(#{$j}) {
+                  left: calc(#{(-1 - $i + $j)} * (100% / 4)); 
+                }
+              }
+            }
+          }
+        }
+      };
+      @include range-width(1030px, 1200px) {
+        > * {
+          width: calc(100% / 5 - 20px);
+        }
+        @for $i from 0 through 30 {
+          &[data-n="#{$i}"] {
+            > * {
+              @for $j from 1 through 30 {
+                &:nth-child(#{$j}) {
+                  left: calc(#{(-1 - $i + $j)} * (100% / 5)); 
+                }
+              }
+            }
+          }
+        }
+      };
     }
   }
 

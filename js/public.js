@@ -32,6 +32,20 @@ $(function () {
     $('.select_open').eq (0).click();
   });
 
+  $('.banner3').each (function () {
+    var $that = $(this);
+    var $logos = $that.find ('.logos').attr ('data-n', 0);
+    var $div = $logos.find (' > div');
+
+    $that.find ('.logo_l').click (function () {
+      var n = parseInt ($logos.attr ('data-n'), 10);
+      $logos.attr ('data-n', --n < 0 ? $div.length - 1 : n);
+    });
+    $that.find ('.logo_r').click (function () {
+      var n = parseInt ($logos.attr ('data-n'), 10);
+      $logos.attr ('data-n', ++n >= $div.length ? 0 : n);
+    });
+  });
   $('.banner2').each (function () {
     var $that = $(this);
     var $video_boxs = $that.find ('.video_boxs').attr ('data-n', 0);
