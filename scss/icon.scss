@@ -6,6 +6,12 @@
   @include font-smoothing(antialiased);
 }
 
+.icon-facebook-circular-logo:before {
+  content: "\e900";
+}
+.icon-top:before {
+  content: "\e901";
+}
 .icon-user:before {
   content: "\e902";
 }
