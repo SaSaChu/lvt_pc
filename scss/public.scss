@@ -455,13 +455,70 @@ $c1: rgba(27, 27, 27, 1.00);
         }
 
         .video_boxs {
+          position: relative;
           display: inline-block;
           width: 100%;
           height: 200px;
+          overflow: hidden;
 
+          @include range-width(0, 450px) {
+            width: calc(100% + 15px);
+          }
           @include range-width(450px, 1030px) {
             height: 400px;
           }
+          > * {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include transition(left .3s);
+            @include range-width(0, 450px) {
+              width: calc(100% - 48px);
+            };
+          }
+          ~ .video_d {
+            *:nth-child(1) {
+              background-color: rgba(251, 34, 52, 1.00);
+            }
+          }
+          @for $i from 0 through 25 {
+            &[data-n="#{$i}"] {
+              > div {
+                @for $j from 1 through 25 {
+                  &:nth-child(#{$j}) {
+                    left: #{(-1 - $i + $j) * 100%}; 
+                  }
+                }
+              }
+              ~ .video_d {
+                @for $j from 1 through 25 {
+                  > *:nth-child(#{$j}) {
+                    @if $i == $j - 1 {
+                      background-color: rgba(251, 34, 52, 1.00);
+                    } @else {
+                      background-color: rgba(150, 150, 150, 1.00);
+                    }
+                  }
+                }
+              }
+            }
+          }
+          @include range-width(0, 450px) {
+            @for $i from 0 through 25 {
+              &[data-n="#{$i}"] {
+                > div {
+                  @for $j from 1 through 25 {
+                    &:nth-child(#{$j}) {
+                      left: calc(#{(-1 - $i + $j)} * (100% - 32px));
+                    }
+                  }
+                }
+              }
+            }
+          };
         }
 
         .video_d {
@@ -476,6 +533,7 @@ $c1: rgba(27, 27, 27, 1.00);
             height: 5px;
             padding: 0;
             margin: 0 5px;
+            cursor: pointer;
             background-color: rgba(150, 150, 150, 1.00);
 
             &.video_hover {
@@ -877,11 +935,6 @@ $c1: rgba(27, 27, 27, 1.00);
           width: 100%;
           height: 100%;
           @include transition(left .3s);
-          @for $j from 1 through 25 {
-            &:nth-child(#{$j}) {
-              left: #{(-1 + $j) * 100%}; 
-            }
-          }
         }
         ~ .b_d {
             > *:nth-child(1) {
@@ -1033,8 +1086,6 @@ $c1: rgba(27, 27, 27, 1.00);
         height: 30px;
         font-size: 30px;
       }
-
-
 
       &.logo_l {
         left: -45px;

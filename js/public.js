@@ -32,10 +32,20 @@ $(function () {
     $('.select_open').eq (0).click();
   });
 
+  $('.banner2').each (function () {
+    var $that = $(this);
+    var $video_boxs = $that.find ('.video_boxs').attr ('data-n', 0);
+    var $div = $video_boxs.find (' > div');
+    // var $video_d = $that.find ('.video_boxs').attr ('data-n', 0);
+
+    $that.find ('.video_d').empty ().append (Array.apply (null, Array ($div.length)).map (function () {
+      return $('<p />').click (function () { $video_boxs.attr ('data-n', $(this).index ()); });
+    }));
+  });
   $('.banner1').each (function () {
     var $that = $(this);
     var $banner_pic = $that.find ('.banner_pic').attr ('data-n', 0);
-    var $div = $that.find ('.banner_pic > div').imgLiquid ({ verticalAlign:'center' });
+    var $div = $banner_pic.find ('> div').imgLiquid ({ verticalAlign:'center' });
 
     $that.find ('.b_l').click (function () {
       var n = parseInt ($banner_pic.attr ('data-n'), 10);
