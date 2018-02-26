@@ -73,6 +73,12 @@ $(function () {
       return $('<p />').click (function () { $banner_pic.attr ('data-n', $(this).index ()); });
     }));
   });
+  $('#r_menu_boxs').each (function () {
+    var $that = $(this);
+    $that.find ('span').click (function () {
+      $(this).toggleClass ('s');
+    })
+  });
 
   // $('#top_btn').click (function () {
   //   if ($(this).index () === 0) {
