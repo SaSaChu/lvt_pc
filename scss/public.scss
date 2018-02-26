@@ -319,71 +319,81 @@ $c1: rgba(27, 27, 27, 1.00);
 
 // 手機版，側邊menu
 #r_menu_boxs {
-  position: fixed;
-  right: -250px;
-  top: 80px;
-  z-index: 20;
-  // margin-top: 80px;
-  // height: calc(100% - 65px);
-  height: calc(100% - 80px);
-  width: 250px;
-  background-color: rgba(251, 38, 59, 1.00);
-  overflow: auto;
-  @include transition(opacity .3s, right .3s);
-  text-align: left;
-  padding: 15px 0; 
-  @include range-width(0, 450px) {
-    top: 60px;
-    height: calc(100% - 60px);
-    // margin-top: 60px;
-    // height: calc(100% - 65px);
-  }
-  &.s_menu {
-    right: 0;    
-  }
+  display: none;
 
-  a {
+  @include range-width(0, 1030px) {
     display: inline-block;
-    width: 100%;
-    padding: 15px 20px;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    cursor: pointer;
-    @include transition(all .3s);
 
-    &:hover, &:active {
-      background-color: rgba(203, 29, 47, 1.00);
+    position: fixed;
+    right: -250px;
+    top: 80px;
+    z-index: 20;
+    // margin-top: 80px;
+    // height: calc(100% - 65px);
+    height: calc(100% - 80px);
+    width: 250px;
+    background-color: rgba(251, 38, 59, 1.00);
+    overflow: auto;
+    @include transition(opacity .3s, right .3s);
+    text-align: left;
+    padding: 15px 0; 
+    @include range-width(0, 450px) {
+      top: 60px;
+      height: calc(100% - 60px);
+      // margin-top: 60px;
+      // height: calc(100% - 65px);
+    }
+    &.s_menu {
+      right: 0;    
     }
 
-    &:first-child {
-      &:before {
-        display: inline-block;
-        content: '\e902';
-        font-family: 'icomoon';
-        font-size: 22px;
-        margin-right: 10px;
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 20px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      @include transition(all .3s);
+
+      &:hover, &:active {
+        background-color: rgba(203, 29, 47, 1.00);
+      }
+
+      &:first-child {
+        &:before {
+          display: inline-block;
+          content: '\e902';
+          font-family: 'icomoon';
+          font-size: 22px;
+          margin-right: 10px;
+        }
       }
     }
-  }
+  }  
 }
 #menu_back {
-  position: fixed;
-  left: -500px;
-  top: 80px;
-  z-index: 10;
-  height: calc(100% - 80px);
-  width: 100%;
-  
-  @include range-width(0, 450px) {
-    top: 60px;
-    height: calc(100% - 60px);
-  }
-  @include transition(opacity .4s, left .3s);
+  display: none;
 
-  &.s_menu_b {
-    left: 0;
-    background-color: rgba(0, 0, 0, .6);
+  @include range-width(0, 1030px) {
+    position: fixed;
+    left: -500px;
+    top: 80px;
+    z-index: 10;
+    height: calc(100% - 80px);
+    width: 100%;
+    
+    @include range-width(0, 450px) {
+      top: 60px;
+      height: calc(100% - 60px);
+    }
+    @include transition(opacity .4s, left .3s);
+
+    &.s_menu_b {
+      left: 0;
+      background-color: rgba(0, 0, 0, .6);
+    }
   }
 }
 
@@ -411,6 +421,10 @@ footer {
   width: 100%;
   padding: 30px 0;
 
+  @include range-width(0, 1030px) {
+    padding: 15px 0;
+  }
+
   #footer_boxs {
     display: inline-block;
     width: 100%;
@@ -422,7 +436,29 @@ footer {
       padding: 0 20px;
     }
 
-    .footer_l, .footer_r {
+    .footer_type {
+      display: none;
+
+      @include range-width(0, 1030px) {
+        display: inline-block;
+        width: 100%;
+
+        .f_t1, .f_t2 {
+          display: inline-block;
+          width: 100%;
+          color: white;
+          font-size: 15px;
+          float: left;
+          text-align: left;
+        }
+        
+        .f_t1 {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .footer_l, .footer_c, .footer_r {
       display: inline-block;
       float: left;
 
@@ -457,6 +493,22 @@ footer {
         font-size: 14px;
         padding-left: 15px;
         text-align: left;
+
+        &.f_space {
+          padding-bottom: 15px;
+        }
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: none;
+          color: white;
+
+          &:hover, &:active {
+            color: rgba(251, 30, 45, 1.00);
+            text-decoration: underline;
+          }
+        }
       }
 
       .f_con {
@@ -464,17 +516,36 @@ footer {
         width: 100%;
         margin-top: 50px;
 
-        border: 1px solid rgba(255, 0, 0, .3);
+        @include range-width(450px, 1200px) {
+          margin-top: 30px;
+        }
 
         a {
           display: inline-block;
           cursor: pointer;
-          float: left;
           width: 113px;
-          height: 30px;
+          height: 40px;
           margin-right: 10px;
-          background-color: rgba(0, 0, 255, 0.2);
+          @include clearfix();
+          float: left;
 
+          &.a1 {
+            height: 40px;
+            background-image: url(../img/app-store-website.png);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            border: 1px solid white;
+            @include border-radius(8px);
+          }
+          &.a2 {
+            height: 40px;
+            background-image: url(../img/app-store-website.png);
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            border: 1px solid white;
+            @include border-radius(8px);
+            margin-left: 15px;
+          }
 
 
           &:last-child {
@@ -503,14 +574,44 @@ footer {
 
     .footer_l {
       width: 455px;
+
+      @include range-width(1030px, 1200px) {
+        width: 350px;
+      }
+      @include range-width(0, 1030px) {
+        display: none;
+      }
+    }
+
+    .footer_c {
+      width: calc(100% - 455px - 380px - 30px);
+      padding-left: 30px;
+
+      @include range-width(1110px, 1200px) {
+        width: calc(100% - 350px - 380px - 30px);
+      }
+
+      @include range-width(1030px, 1110px) {
+        width: calc(100% - 350px - 300px - 30px);
+      }
+
+      @include range-width(0, 1030px) {
+        display: none;
+      }
     }
 
     .footer_r {
-      width: calc(100% - 455px);
+      display: inline-block;
+      width: 380px;
+      height: 235px;
 
-      // d
-      height: 300px;
-      background-color: rgba(0, 128, 0, 0.2);
+      @include range-width(1030px, 1110px) {
+        width: 300px;
+      }
+
+      @include range-width(0, 1030px) {
+        display: none;
+      }
     }
   }
 }
