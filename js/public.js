@@ -73,11 +73,14 @@ $(function () {
       return $('<p />').click (function () { $banner_pic.attr ('data-n', $(this).index ()); });
     }));
   });
+  $('#top_btn').click (function () {
+      $('html, body').animate ({ scrollTop: 0 }, 'slow');
+  });
   $('#r_menu_boxs').each (function () {
     var $that = $(this);
     $that.find ('span').click (function () {
       $(this).toggleClass ('s');
-    })
+    });
   });
 
   // $('#top_btn').click (function () {
