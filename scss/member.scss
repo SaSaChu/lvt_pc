@@ -1,0 +1,361 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 - 2018, OAF2E
+ * @license     http://opensource.org/licenses/MIT  MIT License
+ * @link        https://www.ioa.tw/
+ */
+
+@import "_oa";
+
+#title_bar {
+  display: inline-block;
+  width: 100%;
+  height: 100px;
+  background-image: url(../img/title_bg.jpg);
+  background-repeat: no-repeat;
+
+  @include range-width(450px, 1030px) {
+    height: 80px;
+  }
+
+  @include range-width(0, 450px) {
+    height: 40px;
+  }
+
+  .title_boxs {
+    display: inline-block;
+    max-width: 1200px;
+    width: 100%;
+    padding-top: 25px; 
+    @include clearfix();
+
+    @include range-width(1030px, 1200px) {
+      padding: 20px;
+    }
+
+    @include range-width(450px, 1030px) {
+      padding: 15px 10px;
+    }
+
+    @include range-width(0, 450px) {
+      padding: 4px 10px;
+    }
+
+    .title_box_l, .title_box_r {
+      display: inline-block;
+      float: left;
+    }
+
+    .title_box_l {
+      width: calc(100% - 100px);
+
+      .title {
+        display: inline-block;
+        width: 100%;
+        color: white;
+        text-align: left;
+        font-size: 22px;
+        font-weight: 600;
+        padding-left: 15px;
+        position: relative;
+        margin-bottom: 5px;
+
+        &:before {
+          display: inline-block;
+          content: '';
+          width: 5px;
+          height: 22px;
+          background-color: rgba(249, 43, 65, 1.00);
+          position: absolute;
+          top: 5px;
+          left: 0;
+        }
+      }
+
+      .title_tag {
+        display: inline-block;
+        width: 100%;
+        @include clearfix();
+        
+        @include range-width(0, 450px) {
+          display: none;
+        }
+
+        p {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          float: left;
+
+          a {
+            display: inline-block;
+            cursor: pointer;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            @include transition(all .3s);
+            
+            &:hover, &:active, &.tac {
+              color: rgba(252, 34, 52, 1.00);
+            }
+          }
+
+          &:after {
+            display: inline-block;
+            content: '\e409';
+            font-family: icomoon;
+            font-size: 14px;
+            color: white;
+            margin: 0 3px;
+          }
+
+          &:last-child {
+            &:after {
+              display: none;
+            }
+          }
+
+          &:first-child {
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+
+    .title_box_r {
+      width: 100px;
+      @include clearfix();
+      @include range-width(0, 450px) {
+        display: none;
+      }
+
+      a {
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        background-color: rgba(251, 34, 52, 1.00);
+        font-size: 14px;
+        text-decoration: none;
+        padding: 15px; 
+        color: white;
+        @include border-radius(2px);
+        @include transition(all .3s);
+        
+        &:hover, &:active {
+          background-color: rgba(190, 24, 38, 1.00);
+        }
+      }
+    }
+  }
+}
+
+
+#cent {
+  @include range-width(0, 650px) {
+    padding: 0;
+    background-color: white;
+  }
+
+  .cent03 {
+    height: calc(100vh - 80px - 100px - 295px - 35px);
+    margin: 15px 0;
+    position: relative;
+
+    @include range-width(0, 650px) {
+      margin: 0;
+      height: 100%;
+    }
+
+    .member_boxs {
+      display: inline-block;
+      width: 100%;
+      height: 500px;
+      max-width: 840px;
+      padding: 20px 30px;
+      background-color: white;
+      @include border-radius(2px);
+      -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+
+      @include range-width(450px, 650px) {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        height: 100%;
+        position: static;
+      }
+
+      @include range-width(0, 450px) {
+        padding: 10px 15px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        height: 100%;
+        position: static;
+      }
+
+      // 絕對定位：置中
+      position: absolute;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      margin:auto;
+
+      @include clearfix();
+      
+      .member_box_l, .member_box_r {
+        display: inline-block;
+        float: left;
+      }
+
+      .member_box_l {
+        width: calc(100% - 235px - 50px);
+        border-right: 1px solid rgba(215, 215, 215, 1.00);
+        padding-right: 50px;
+        margin-right: 50px;
+
+        @include range-width(0, 650px) {
+          width: 100%;
+          padding-right: 0;
+          margin-right: 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba(215, 215, 215, 1.00);
+          padding-bottom: 50px;
+          margin-bottom: 50px;
+        }
+
+        > div {
+          display: inline-block;
+          width: 100%;
+          text-align: left;
+
+          input {
+            display: inline-block;
+            width: 100%;
+            color: black;
+            font-size: 18px;
+            font-weight: 600;
+            @include border-radius(2px);
+            background-color: rgba(242, 242, 242, 1.00);
+            border: 0;
+            outline: 0;
+            padding: 15px;
+            margin: 0 0 25px 0;
+          }
+
+          select {
+            display: inline-block;
+            width: 100%;
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background-color: rgba(242, 242, 242, 1.00);
+            border: 1px solid rgba(233, 233, 233, 1.00);
+            @include border-radius(2px);
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            outline: 0;
+            background: url(../img/ad.png) no-repeat right rgba(242, 242, 242, 1.00);
+
+            @include transition(all .3s);
+
+            &:hover, &:active {
+              border: 1px solid rgba(245, 41, 62, .5);
+              -webkit-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+              -moz-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+              box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+            }
+
+            &:nth-child(3), &:nth-child(5), {
+              width: calc(50% - 5px);
+              float: left;
+              margin-right: 5px;
+            }
+
+            &:nth-child(4), &:nth-child(6), {
+              width: calc(50% - 5px);
+              float: right;
+              margin-left: 5px;
+            }
+          }
+          select::-ms-expand { display: none; }
+
+          button {
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px 30px;
+            margin-top: 15px;
+            color: white;
+            font-size: 18px; 
+            background-color: rgba(251, 30, 45, 1.00);
+            float: right;
+            outline: 0;
+            border: 0;
+            @include border-radius(2px);
+            @include transition(all .3s);
+
+            &:hover, &:active {
+              background-color: rgba(197, 27, 42, 1.00);
+            }
+
+            @include range-width(0, 650px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .member_box_r {
+        width: 235px;
+        @include clearfix();
+
+        @include range-width(0, 650px) {
+          width: 100%;
+        }
+        
+        p {
+          display: inline-block;
+          width: 100%;
+          padding: 0;
+          margin: 0 0 20px 0;
+
+          @include range-width(0, 650px) {
+            width: calc(100% / 2 - 6px * 2);
+
+            &:first-child {
+              float: left;
+              margin-right: 6px;
+            }
+            &:last-child {
+              float: right;
+              margin-left: 6px;
+            }
+          }
+
+          a {
+            display: inline-block;
+            float: right;
+            width: 100%;
+            color: rgba(150, 150, 150, 1.00);
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 0;
+            background-color: rgba(225, 225, 225, 1.00);
+            @include border-radius(2px);
+            @include transition(all .3s);
+            
+            &:hover, &:active, &.mac {
+              color: white;
+              background-color: rgba(251, 34, 52, 1.00);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
