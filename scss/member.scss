@@ -190,6 +190,7 @@
 
         @include range-width(0, 650px) {
           height: 100%;
+          min-height: 100%;
         }
       }
 
@@ -427,7 +428,7 @@
         }
       }
 
-      button {
+      a, button {
         display: inline-block;
         cursor: pointer;
         padding: 10px 30px;
@@ -437,6 +438,7 @@
         background-color: rgba(251, 30, 45, 1.00);
         outline: 0;
         border: 0;
+        text-decoration: none;
         @include border-radius(2px);
         @include transition(all .3s);
 
@@ -447,6 +449,7 @@
         @include range-width(0, 650px) {
           width: 100%;
           margin-top: 40px;
+          margin-bottom: 100px;
         }
       }
     }
