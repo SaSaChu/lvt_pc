@@ -429,6 +429,14 @@
         @include range-width(0, 610px) {
           width: 100%;
         }
+
+        &.login_in {
+          width: 380px;
+
+          @include range-width(0, 610px) {
+            width: 100%;
+          }
+        }
       }
 
       a, button {
@@ -444,6 +452,38 @@
         text-decoration: none;
         @include border-radius(2px);
         @include transition(all .3s);
+
+        &.login_a {
+          margin: 80px 0 40px 5px;
+
+          @include range-width(0, 650px) {
+            width: calc(50% - 5px * 2);
+            margin-top: 20px;
+            float: left;
+          }
+        }
+
+        &.login_re {
+          cursor: pointer;
+          padding: 0;
+          margin-top: 15px;
+          margin-left: 5px;
+          color: black;
+          font-size: 14px; 
+          background-color: transparent;
+
+          &:hover, &:active {
+            text-decoration: underline;
+            background-color: transparent;
+          }
+
+          @include range-width(0, 610px) {
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 0;
+            margin-left: 0;
+          }
+        }
 
         &:hover, &:active {
           background-color: rgba(197, 27, 42, 1.00);
