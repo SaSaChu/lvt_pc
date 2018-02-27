@@ -32,6 +32,16 @@ $(function () {
     $('.select_open').eq (0).click();
   });
 
+  $('.banner4').each (function () {
+    var $that = $(this);
+    var $news_boxs = $that.find ('.news_boxs').attr ('data-n', 0);
+    $that.find ('.new_tag').click (function () {
+      $news_boxs.attr ('data-n', $(this).parent ().index ());
+      $that.find ('.new_tag').removeClass ('in_ac');
+      $(this).addClass ('in_ac');
+    });
+  });
+
   $('.banner3').each (function () {
     var $that = $(this);
     var $logos = $that.find ('.logos').attr ('data-n', 0);
