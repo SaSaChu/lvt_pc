@@ -151,9 +151,12 @@
 
 
 #cent {
-  @include range-width(0, 650px) {
-    padding: 0;
-    background-color: white;
+
+  &.m_bg {
+    @include range-width(0, 650px) {
+      padding: 0;
+      background-color: white;
+    }
   }
 
   .cent03 {
@@ -177,6 +180,18 @@
       -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
       -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
       box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+
+      &.buy_bg {
+        height: 340px;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+        @include range-width(0, 650px) {
+          height: 100%;
+        }
+      }
 
       @include range-width(450px, 650px) {
         -webkit-box-shadow: none;
@@ -355,7 +370,105 @@
           }
         }
       }
+    }
 
+    .buy_boxs {
+      display: inline-block;
+      width: 100%;
+      max-width: 560px;
+      @include clearfix();
+
+      p {
+        display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 10px 0;
+        margin-right: 15px;
+        color: black;
+        font-size: 18px;
+
+        @include range-width(0, 610px) {
+          text-align: left;
+        }
+
+        &.r_note {
+          display: inline-block;
+          padding: 0;
+          margin: 15px 0 0 87px;
+          color: rgba(251, 34, 52, 1.00);
+          font-size: 14px;
+          font-weight: 400;
+
+          @include range-width(0, 610px) {
+            margin: 15px 0 0 0;
+            font-size: 15px;
+          }
+        }
+      }
+
+      input {
+        display: inline-block;
+        float: left;
+        width: 465px;
+        padding: 15px;
+        background-color: white;
+        border: 0;
+        outline: 0;
+        -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+        -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+        box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+        @include border-radius(2px);
+        color: black;
+        font-size: 18px;
+        font-weight: 600;
+
+        @include range-width(0, 610px) {
+          width: 100%;
+        }
+      }
+
+      button {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px 30px;
+        margin-top: 80px;
+        color: white;
+        font-size: 18px; 
+        background-color: rgba(251, 30, 45, 1.00);
+        outline: 0;
+        border: 0;
+        @include border-radius(2px);
+        @include transition(all .3s);
+
+        &:hover, &:active {
+          background-color: rgba(197, 27, 42, 1.00);
+        }
+
+        @include range-width(0, 650px) {
+          width: 100%;
+          margin-top: 40px;
+        }
+      }
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

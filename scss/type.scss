@@ -27,3 +27,21 @@
   }
 }
 
+.member_type {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 5px 0;
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+
+  @include range-width(0, 610px) {
+    text-align: left;
+  }
+
+   &.space_25 {
+    margin-bottom: 25px;
+  }
+}
+

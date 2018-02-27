@@ -24,6 +24,7 @@ html {
 
     display: inline-block;
     width: 100%;
+    height: 100%;
     min-height: 100%;
     margin: 0;
     padding: 0;
@@ -465,6 +466,7 @@ $c1: rgba(27, 27, 27, 1.00);
 #cent {
   display: inline-block;
   width: 100%;
+  height: 100%;
   max-width: 1200px;
   padding: 30px 0; 
 
@@ -1342,6 +1344,12 @@ footer {
     padding: 15px 0;
   }
 
+  &.member_footer {
+    @include range-width(0, 650px) {
+      display: none;
+    }
+  }
+
   #footer_boxs {
     display: inline-block;
     width: 100%;
@@ -1352,6 +1360,8 @@ footer {
     @include range-width(450px, 1200px) {
       padding: 0 20px;
     }
+
+
 
     .footer_type {
       display: none;
@@ -1541,6 +1551,12 @@ footer {
   color: white;
   font-size: 14px;
   padding: 8px 0;
+
+  &.black_footer {
+    @include range-width(0, 650px) {
+      background-color: rgba(26, 26, 26, 1.00);
+    }
+  }
 }
 
 
