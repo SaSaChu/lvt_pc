@@ -53,3 +53,58 @@
   }
 }
 
+.type14_all {
+  display: inline-block;
+  padding: 5px 0;
+  margin: 0;
+  font-size: 16px;
+  width: 100%;
+  color: black;
+}
+
+.type16_all {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 25px 0;
+  font-size: 16px;
+  width: 100%;
+  color: black;
+  font-weight: 600;
+
+  @include range-width(0, 1205px) {
+    margin: 0 0 10px 0;
+  }
+}
+
+.type18_all {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  width: 100%;
+  color: black;
+}
+
+.type18 {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  color: black;
+}
+
+.type15 {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  color: black;
+}
+
+.check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 128, 0, 0.2);
+  margin-right: 5px;
+}

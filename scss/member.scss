@@ -107,6 +107,7 @@
             font-size: 14px;
             color: white;
             margin: 0 3px;
+            line-height: 21px;
           }
 
           &:last-child {
@@ -674,6 +675,182 @@
               font-size: 12px;
             }
           }
+        }
+      }
+    }
+  }
+
+  .cent05 {
+    padding: 20px 0;
+    @include clearfix();
+
+    @include range-width(450px, 1200px) {
+      width: calc(100% - 40px);
+      margin: 0 20px;
+    }
+
+    @include range-width(0, 450px) {
+      width: calc(100% - 20px);
+      margin: 0 10px;
+    }
+
+    .buy2_boxs {
+      display: inline-block;
+      width: 100%;
+      padding: 25px;
+      background-color: white;
+      @include border-radius(2px);
+      -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      margin-bottom: 20px;
+      @include clearfix();
+      text-align: left;
+
+      @include range-width(0, 450px) {
+        padding: 10px;
+      }
+
+      .buy2_boxs_l, .buy2_boxs_r {
+        display: inline-block;
+        float: left;
+        text-align: left;
+      }
+
+      .buy2_boxs_l {
+        width: calc(100% - 545px  - 65px);
+        margin-right: 65px;
+        @include clearfix();
+
+        @include range-width(0, 885px) {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .buy2_cent {
+          display: inline-block;
+          width: calc(100% / 3 - 50px);
+          float: left;
+          margin-bottom: 25px;
+
+          &:first-child {
+            width: 280px;
+          }
+
+          @include range-width(0, 1205px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .buy2_boxs_r {
+        width: 545px;
+
+        @include range-width(0, 885px) {
+          width: 100%;
+        }
+
+        .check_boxs, .check_hover_boxs {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .check_hover_boxs {
+          padding-left: 30px;
+
+          .buy_input_boxs {
+            display: inline-block;
+            width: 100%;
+
+            select {
+              display: inline-block;
+              width: calc(50% - 5px);
+              font-size: 18px;
+              margin-bottom: 10px;
+              padding: 10px 15px;
+              background-color: rgba(242, 242, 242, 1.00);
+              border: 1px solid rgba(233, 233, 233, 1.00);
+              @include border-radius(2px);
+              appearance:none;
+              -moz-appearance:none;
+              -webkit-appearance:none;
+              outline: 0;
+              background: url(../img/ad.png) no-repeat right rgba(242, 242, 242, 1.00);
+
+              @include transition(all .3s);
+
+              &:hover, &:active {
+                border: 1px solid rgba(245, 41, 62, .5);
+                -webkit-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+                -moz-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+                box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+              }
+
+              &:nth-child(2){
+                float: right;
+                margin-left: 5px;
+              }
+
+              &:nth-child(3){
+                float: left;
+                margin-right: 5px;
+              }
+
+              @include range-width(0, 450px) {
+                font-size: 16px;
+                padding: 10px;
+              }
+            }
+            select::-ms-expand { display: none; }
+
+            input {
+              display: inline-block;
+              float: left;
+              width: 100%;
+              padding: 15px;
+              background-color: rgba(242, 242, 242, 1.00);
+              border: 1px solid rgba(233, 233, 233, 1.00);
+              border: 0;
+              outline: 0;
+              @include border-radius(2px);
+              color: black;
+              font-size: 18px;
+
+              @include range-width(0, 450px) {
+                font-size: 16px;
+                padding: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .buy2_btn {
+      display: inline-block;
+      width: 100%;
+
+      button {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px 30px;
+        margin-top: 40px;
+        color: white;
+        font-size: 18px; 
+        background-color: rgba(251, 30, 45, 1.00);
+        outline: 0;
+        border: 0;
+        text-decoration: none;
+        @include border-radius(2px);
+        @include transition(all .3s);
+
+        &:hover, &:active {
+          background-color: rgba(197, 27, 42, 1.00);
+        }
+
+        @include range-width(0, 885px) {
+          margin-bottom: 40px;
         }
       }
     }
