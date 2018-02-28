@@ -83,26 +83,18 @@ $(function () {
       return $('<p />').click (function () { $banner_pic.attr ('data-n', $(this).index ()); });
     }));
   });
+
+  // 回到上面按鈕
   $('#top_btn').click (function () {
       $('html, body').animate ({ scrollTop: 0 }, 'slow');
   });
+
   $('#r_menu_boxs').each (function () {
     var $that = $(this);
     $that.find ('span').click (function () {
       $(this).toggleClass ('s');
     });
   });
-
-  // $('#top_btn').click (function () {
-  //   if ($(this).index () === 0) {
-      
-  //     $('html, body').animate ({ scrollTop: 100 }, 'slow');
-  //   } else if ($(this).index () === 1) {
-  //     $('html, body').animate ({ scrollTop: '-=500px' },'slow');
-  //   } else {
-  //     $('html, body').animate ({ scrollTop: '+=500px' },'slow');
-  //   }
-  // });
 
 
 });
