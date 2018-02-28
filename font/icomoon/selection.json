@@ -4,6 +4,32 @@
     {
       "icon": {
         "paths": [
+          "M1024 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "doll"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [],
+      "properties": {
+        "order": 98,
+        "id": 0,
+        "name": "doll",
+        "prevSize": 32,
+        "code": 59651
+      },
+      "setIdx": 0,
+      "setId": 37,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
           "M512.003 2.132c-282.769 0-512.003 229.234-512.003 512.003 0 253.61 184.587 463.642 426.611 504.313v-397.496h-123.51v-143.043h123.51v-105.474c0-122.38 74.746-189.070 183.934-189.070 52.294 0 97.235 3.897 110.281 5.613v127.92l-75.729 0.037c-59.367 0-70.813 28.205-70.813 69.61v91.292h141.656l-18.476 143.043h-123.18v400.989c253.323-30.832 449.717-246.214 449.717-507.88 0-282.622-229.234-511.856-511.997-511.856z"
         ],
         "attrs": [
@@ -26,7 +52,7 @@
         "prevSize": 32,
         "code": 59648
       },
-      "setIdx": 0,
+      "setIdx": 1,
       "setId": 36,
       "iconIdx": 0
     },
@@ -52,7 +78,7 @@
         "prevSize": 32,
         "code": 59649
       },
-      "setIdx": 1,
+      "setIdx": 2,
       "setId": 35,
       "iconIdx": 0
     },
@@ -86,7 +112,7 @@
         "prevSize": 32,
         "code": 59650
       },
-      "setIdx": 2,
+      "setIdx": 3,
       "setId": 34,
       "iconIdx": 1
     },
@@ -113,7 +139,7 @@
         "code": 58376,
         "name": "navigate_before"
       },
-      "setIdx": 3,
+      "setIdx": 4,
       "setId": 33,
       "iconIdx": 152
     },
@@ -140,7 +166,7 @@
         "code": 58377,
         "name": "navigate_next"
       },
-      "setIdx": 3,
+      "setIdx": 4,
       "setId": 33,
       "iconIdx": 153
     },
@@ -167,7 +193,7 @@
         "code": 58830,
         "name": "expand_less"
       },
-      "setIdx": 3,
+      "setIdx": 4,
       "setId": 33,
       "iconIdx": 255
     },
@@ -194,7 +220,7 @@
         "code": 58831,
         "name": "expand_more"
       },
-      "setIdx": 3,
+      "setIdx": 4,
       "setId": 33,
       "iconIdx": 256
     },
@@ -221,7 +247,7 @@
         "code": 58311,
         "name": "dehaze"
       },
-      "setIdx": 4,
+      "setIdx": 5,
       "setId": 32,
       "iconIdx": 2
     }

@@ -6,6 +6,9 @@
   @include font-smoothing(antialiased);
 }
 
+.icon-doll:before {
+  content: "\e903";
+}
 .icon-facebook-circular-logo:before {
   content: "\e900";
 }

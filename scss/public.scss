@@ -209,7 +209,7 @@ $c1: rgba(27, 27, 27, 1.00);
         position: relative;
 
         @include range-width(1065px, 1200px) {
-          margin-left: 30px;
+          margin-left: 25px;
         }
 
         @include range-width(1030px, 1065px) {
@@ -1513,9 +1513,16 @@ footer {
               content: '\e900';
               font-family: icomoon;
               font-size: 40px;
-              color: rgba(55, 85, 145, 1.00);
+              color: rgba(73, 73, 73, 1.00);
               margin-top: -1px;
               margin-left: -1px;
+              @include transition(all .3s);
+            }
+
+            &:hover, &:active {
+              &:before {
+                color: rgba(55, 85, 145, 1.00);
+              }
             }
           }
         }

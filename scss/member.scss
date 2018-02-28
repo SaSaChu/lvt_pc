@@ -684,7 +684,15 @@
     padding: 20px 0;
     @include clearfix();
 
-    @include range-width(450px, 1200px) {
+    &.m_nos {
+       @include range-width(0, 450px) {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    @include range-width(450px, 1030px) {
       width: calc(100% - 40px);
       margin: 0 20px;
     }
@@ -693,6 +701,8 @@
       width: calc(100% - 20px);
       margin: 0 10px;
     }
+
+    
 
     .buy2_boxs {
       display: inline-block;
