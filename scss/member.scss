@@ -767,6 +767,7 @@
         }
 
         .check_hover_boxs {
+          display: none;
           padding-left: 30px;
 
           .buy_input_boxs {
@@ -832,6 +833,11 @@
                 padding: 10px;
               }
             }
+          }
+        }
+        .check_boxs.s {
+          +.check_hover_boxs {
+            display: inline-block;
           }
         }
       }

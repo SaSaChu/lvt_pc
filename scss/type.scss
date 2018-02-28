@@ -101,10 +101,19 @@
   color: black;
 }
 
-.check {
+.radio {
+  @include radio(rgba(251, 38, 59, 1.00));
+
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: rgba(0, 128, 0, 0.2);
-  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.check {
+  @include checkbox(rgba(251, 38, 59, 1.00));
+
+  display: inline-block;
+  width: 20px;
+  height: 20px;
 }
