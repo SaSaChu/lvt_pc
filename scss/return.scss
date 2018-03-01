@@ -19,6 +19,126 @@
       width: 100%;
       text-align: left;
       @include clearfix();
+
+      // 關於我們
+      &.re_about {
+        margin-bottom: 20px;
+
+        &.re_map {
+          border: 1px solid rgba(113, 112, 112, .5);
+        }
+
+        .a_title, .a_cent {
+          display: inline-block;
+          width: 100%;
+        }
+
+        .a_title {
+          color: black;
+          text-align: left;
+          font-size: 18px;
+          font-weight: 600;
+          padding-left: 15px;
+          position: relative;
+          margin-bottom: 10px;
+
+          &:before {
+            display: inline-block;
+            content: '';
+            width: 5px;
+            height: 20px;
+            background-color: rgba(249, 43, 65, 1.00);
+            position: absolute;
+            top: 3px;
+            left: 0;
+          }
+        }
+
+        .a_cent {
+          color: black;
+          font-size: 15px;
+          padding-left: 15px;
+          text-align: left;
+          line-height: 26px;
+
+          &.a_space {
+            padding-bottom: 15px;
+          }
+
+          a {
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+
+            &:hover, &:active {
+              color: rgba(251, 30, 45, 1.00);
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .a_con {
+          display: inline-block;
+          width: 100%;
+
+          a {
+            display: inline-block;
+            cursor: pointer;
+            width: 113px;
+            height: 40px;
+            margin-right: 5px;
+            @include clearfix();
+            float: left;
+
+            &.a1 {
+              height: 40px;
+              background-image: url(../img/app-store-website.png);
+              background-position: 0 0;
+              background-repeat: no-repeat;
+              border: 1px solid white;
+              @include border-radius(8px);
+            }
+            &.a2 {
+              height: 43px;
+              background-image: url(../img/app-store-website.png);
+              background-position: 100% 100%;
+              background-repeat: no-repeat;
+              border: 1px solid white;
+              @include border-radius(8px);
+            }
+
+
+            &:last-child {
+              display: inline-block;
+              cursor: pointer;
+              width: 38px;
+              height: 38px;
+              float: right;
+              text-decoration: none;
+              background-color: white;
+              @include border-radius(30px);
+
+              &:before {
+                display: inline-block;
+                content: '\e900';
+                font-family: icomoon;
+                font-size: 40px;
+                color: rgba(73, 73, 73, 1.00);
+                margin-top: -1px;
+                margin-left: -1px;
+                @include transition(all .3s);
+              }
+
+              &:hover, &:active {
+                &:before {
+                  color: rgba(55, 85, 145, 1.00);
+                }
+              }
+            }
+          }
+        }
+      }
       
       span {
         display: inline-block;
@@ -44,6 +164,10 @@
         width: 100%;
         padding-left: 20px;
         margin-bottom: 20px;
+
+        @include range-width(0, 720px) {
+          padding-left: 0;
+        }
 
         &.re_3 {
           display: inline-block;
@@ -133,6 +257,18 @@
         @include range-width(0, 885px) {
           margin-bottom: 40px;
         }
+      }
+
+      p {
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        color: black;
+        line-height: 26px;
+        text-align: justify;
+        text-justify:inter-ideograph;
       }
     }
   }
