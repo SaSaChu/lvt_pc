@@ -80,10 +80,17 @@
     margin-bottom: 20px;
     @include clearfix();
     
+    @include range-width(0, 800px) {
+      overflow-x: auto;
+      white-space: nowrap
+    }
     > div {
       display: inline-block;
       margin-right: 10px;
       float: left;
+      @include range-width(0, 800px) {
+        float: none;
+      }
 
       @include range-width(0, 450px) {
         margin-right: 0;
@@ -122,6 +129,7 @@
         font-size: 14px;
         font-weight: 600;
         padding: 10px 40px;
+        cursor: pointer;
         @include border-radius(2px);
         @include transition(all .3s);
 
@@ -132,6 +140,9 @@
         &.oper_ac {
           color: white;
           background-color: rgba(252, 34, 52, 1.00);
+        }
+        @include range-width(0, 1030px) {
+          background-color: rgba(229, 229, 229, 1.00);
         }
       }
     }
@@ -173,6 +184,17 @@
       width: 100%;
       max-width: 790px;
       height: 100%;
+
+      &.i1 {
+        @include range-width(0, 1030px) {
+          display: none;
+        };
+      }
+      &.i2 {
+        @include range-width(1030px) {
+          display: none;
+        };
+      }
     }
   }
 
@@ -534,3 +556,22 @@
 
 
 
+
+.ct {
+  display: none;
+}
+.cts {
+  @for $i from 0 through 25 {
+    &[data-n="#{$i}"] {
+      ~ .ct {
+        @for $j from 0 through 25 {
+          @if $i == $j {
+            &:nth-child(#{$j + 2}) {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
