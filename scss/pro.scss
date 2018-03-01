@@ -12,6 +12,67 @@
   display: inline-block;
   width: 100%;
   position: relative;
+  @include clearfix();
+
+  .v_se_box {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+  
+    select {
+      display: inline-block;
+      width: 30%;
+      float: left;
+      font-size: 18px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      background-color: white;
+      border: 1px solid rgba(233, 233, 233, 1.00);
+      @include border-radius(2px);
+      appearance:none;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      outline: 0;
+      background: url(../img/ad.png) no-repeat right white;
+      @include transition(all .3s);
+
+      @include range-width(0, 450px) {
+        width: 100%;
+      }
+
+      &:hover, &:active {
+        border: 1px solid rgba(245, 41, 62, .5);
+        -webkit-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+        -moz-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+        box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+      }
+    }
+    select::-ms-expand { display: none; }
+
+    button {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px 30px;
+      color: white;
+      font-size: 18px; 
+      background-color: rgba(251, 34, 52, 1.00);
+      float: left;
+      outline: 0;
+      border: 0;
+      margin-left: 20px;
+      @include border-radius(2px);
+      @include transition(all .3s);
+
+      &:hover, &:active {
+        background-color: rgba(197, 27, 42, 1.00);
+      }
+
+      @include range-width(0, 450px) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
 
   .pro_tab_boxs {
     display: inline-block;
@@ -19,25 +80,59 @@
     margin-bottom: 20px;
     @include clearfix();
     
-    a {
+    > div {
       display: inline-block;
-      cursor: pointer;
-      text-decoration: none;
-      color: rgba(150, 150, 150, 1.00);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 10px 40px;
+      margin-right: 10px;
       float: left;
-      @include border-radius(2px);
-      @include transition(all .3s);
-      
-      &:hover, &:active {
-        background-color: rgba(225, 225, 225, 1.00);
+
+      @include range-width(0, 450px) {
+        margin-right: 0;
       }
 
-      &.oper_ac {
-        color: white;
-        background-color: rgba(252, 34, 52, 1.00);
+      &.news_tab {
+
+        @include range-width(0, 450px) {
+          width: calc(50% - 10px / 2);
+          float: left;
+
+          &:first-child {
+            margin-right: 5px;
+          }
+
+          &:last-child {
+            margin-left: 5px;
+            float: right;
+          }
+
+          a {
+            width: 100%;
+          }
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: none;
+        color: rgba(150, 150, 150, 1.00);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 40px;
+        @include border-radius(2px);
+        @include transition(all .3s);
+
+        &:hover, &:active {
+          background-color: rgba(225, 225, 225, 1.00);
+        }
+
+        &.oper_ac {
+          color: white;
+          background-color: rgba(252, 34, 52, 1.00);
+        }
       }
     }
   }
@@ -130,6 +225,186 @@
 
     @include range-width(0, 1030px) {
       top: calc(100% / 2 - 25px);
+    }
+  }
+
+  .news_list {
+    display: inline-block;
+    width: calc(50% - 25px);
+    float: left;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(225, 225, 225, 1.00);
+
+    @include range-width(0, 940px) {
+      width: 100%;
+    }
+
+    &:nth-child(2n+1) {
+      margin-right: 25px;
+
+      @include range-width(0, 940px) {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-child(2n+2) {
+      margin-left: 25px;
+
+      @include range-width(0, 940px) {
+        margin-left: 0;
+      }
+    }
+
+    .cnew_box {
+      display: inline-block;
+      width: 100%;
+      float: left;
+      @include clearfix();
+
+      @include range-width(0, 450px) {
+        width: 100%;
+        border-bottom: 1px solid rgba(221, 221, 221, 1.00);
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      
+      &:nth-child(1), &:nth-child(3) {
+        margin-right: 28px;
+
+        @include range-width(0, 450px) {
+          margin-right: 0; 
+        }
+      }
+      &:nth-child(2), &:nth-child(4) {
+        margin-left: 28px;
+
+        @include range-width(0, 450px) {
+          margin-left: 0; 
+        }
+      }
+      &:nth-child(3), &:nth-child(4) {
+        border-top: 1px solid rgba(221, 221, 221, 1.00);
+        padding-bottom: 0;
+
+        @include range-width(0, 450px) {
+          border-top: none; 
+          padding-bottom: 20px;
+        }
+      }
+
+      img {
+        width: 100%;
+        max-width: 150px;
+        float: left;
+
+        @include range-width(0, 450px) {
+          max-width: 100px;
+        }        
+      }
+
+      .c_video {
+        display: inline-block;
+        width: 100%;
+        max-width: 150px;
+        height: 90px;
+        float: left;
+
+        @include range-width(0, 450px) {
+          max-width: 100px;
+          height: 60px;
+        }        
+      }
+
+      .cn_type {
+        display: inline-block;
+        width: calc(100% - 150px - 20px);
+        text-align: left;
+        margin-left: 10px;
+
+        @include range-width(0, 450px) {
+          width: calc(100% - 100px - 20px);
+        }
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          width: 100%;
+          padding: 0;
+          margin-bottom: -5px;
+          font-size: 18px;
+          color: black;
+          text-align: left;
+          font-weight: 600;
+          text-decoration: none;
+          @include transition(all .3s);
+
+          @include range-width(450px, 1205px) {
+            font-size: 16px;
+            height: 100%;
+          }
+
+          @include range-width(0, 450px) {
+            font-size: 14px;
+            height: 100%;
+          }
+          
+          &:hover, &:active {
+            color: rgba(251, 30, 45, 1.00);
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          display: inline-block;
+          width: 100%;
+          color: black;
+          font-size: 14px;
+          font-weight: 400;
+          margin: 10px 0 0 0;
+
+          @include range-width(0, 450px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .new_num_boxs {
+    display: inline-block;
+    @include clearfix();
+    float: right;
+
+    @include range-width(0, 940px) {
+      float: none;
+    }
+
+    > a {
+      display: inline-block;
+      margin: 0 5px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      color: rgba(155, 155, 155, 1.00);
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      float: right;
+      background-color: rgba(225, 225, 225, 1.00);
+
+      &:hover, &:active, &.cne_ac {
+        background-color: rgba(251, 30, 45, 1.00);
+        color: white;
+      }
+
+      @include range-width(0, 450px) {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
     }
   }
 }
