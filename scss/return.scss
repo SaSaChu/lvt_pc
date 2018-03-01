@@ -1,0 +1,139 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 - 2018, OAF2E
+ * @license     http://opensource.org/licenses/MIT  MIT License
+ * @link        https://www.ioa.tw/
+ */
+
+@import "_oa";
+
+.cent05 {
+
+  .return_boxs {
+    display: inline-block;
+    width: 100%;
+    max-width: 785px;
+
+    .return_box {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      @include clearfix();
+      
+      span {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: black;
+        font-weight: 600;
+
+         &:before {
+          display: inline-block;
+          content: '\e903';
+          font-family: icomoon;
+          color: rgba(150, 150, 150, 1.00);
+          font-size: 13px;
+          margin-top: 6px;
+          margin-right: 5px;
+        }
+      }
+
+      .re_in_boxs {
+        display: inline-block;
+        width: 100%;
+        padding-left: 20px;
+        margin-bottom: 20px;
+
+        &.re_3 {
+          display: inline-block;
+          width: calc(100% / 3 - 4px);
+
+          @include range-width(0, 720px) {
+            width: 100%;
+          }
+        }
+
+        p {
+          display: inline-block;
+          padding: 0 0 10px 0;
+          margin: 0;
+          font-size: 14px;
+          color: black;
+        }
+
+        textarea {
+          display: inline-block;
+          width: 100%;
+          height: 300px;
+          color: black;
+          font-size: 18px;
+          background-color: white;
+          border: 0;
+          outline: 0;
+          padding: 15px;
+          @include border-radius(2px);
+          -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+          -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+          box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+
+          @include border-radius(2px);
+          color: black;
+          font-size: 18px;
+
+          @include range-width(0, 450px) {
+            font-size: 16px;
+            padding: 10px;
+          }
+        }
+
+        input {
+          display: inline-block;
+          float: left;
+          width: 100%;
+          padding: 15px;
+          background-color: white;
+          border: 0;
+          outline: 0;
+          @include border-radius(2px);
+          -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+          -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+          box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+
+          @include border-radius(2px);
+          color: black;
+          font-size: 18px;
+
+          @include range-width(0, 450px) {
+            font-size: 16px;
+            padding: 10px;
+          }
+        }
+      }
+
+      button {
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        padding: 10px 30px;
+        margin-top: 40px;
+        color: white;
+        font-size: 18px; 
+        background-color: rgba(251, 30, 45, 1.00);
+        outline: 0;
+        border: 0;
+        text-decoration: none;
+        @include border-radius(2px);
+        @include transition(all .3s);
+
+        &:hover, &:active {
+          background-color: rgba(197, 27, 42, 1.00);
+        }
+
+        @include range-width(0, 885px) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
