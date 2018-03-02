@@ -148,16 +148,6 @@
     }
   }
 
-  span {
-    display: inline-block;
-    width: 100%;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: black;
-    text-align: left;
-  }
-
   .pro_pic {
     display: inline-block;
     width: 100%;
@@ -556,9 +546,18 @@
 
 
 
-
 .ct {
   display: none;
+
+  span {
+    display: inline-block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: black;
+    text-align: left;
+  }
 }
 .cts {
   @for $i from 0 through 25 {
@@ -575,3 +574,194 @@
     }
   }
 }
+
+
+
+.news_d_boxs {
+  display: inline-block;
+  width: 100%;
+  @include clearfix();
+  
+  .nd_title, .nd_pic, .nd_cent {
+    display: inline-block;
+  }
+
+  .nd_title, .nd_cent, .nd_btn {
+    width: calc(100% - 415px);
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .nd_title {
+    font-size: 24px;
+    color: rgba(244, 36, 55, 1.00);
+    font-weight: 600;
+    text-align: left;
+
+    @include range-width(0, 1130px) {
+      width: 100%;
+    }
+  }
+
+  .nd_pic {
+    width: 415px;
+    float: left;
+    padding-right: 25px;
+    position: relative;
+
+    @include range-width(0, 1130px) {
+      width: 100%;
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
+
+    a {
+      display: inline-block;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      right: 25px;
+      background-color: rgba(11, 12, 13, .5);
+      color: white;
+      font-size: 30px;
+      line-height: 40px;
+      @include transition(all .3s);
+
+      @include range-width(0, 1130px) {
+        right: 0px;
+      }
+
+      &:hover, &:active {
+        background-color: rgba(11, 12, 13, 1);
+      }
+    }
+
+    img {
+      width: 100%;
+      max-width: 390px;
+    }
+  }
+
+  .nd_cent {
+    font-size: 18px;
+    color: black;
+    text-align: left;
+    line-height: 26px;
+
+    @include range-width(0, 1130px) {
+      width: 100%;
+    }
+  }
+
+  .nd_btn {
+    margin-top: 20px;
+    @include clearfix();
+
+    @include range-width(0, 1130px) {
+      width: 100%;
+    }
+
+    a, button {
+      display: inline-block;
+      cursor: pointer;
+      width: 320px;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration: none;
+      color: rgba(150, 150, 150, 1.00);
+      background-color: rgba(225, 225, 225, 1.00);
+      @include border-radius(2px);
+      border: 0;
+      outline: 0;
+      @include transition(all .3s);
+      
+      &.nd_l {
+        float: left;
+
+        &:before {
+          display: inline-block;
+          content: '\e408';
+          font-family: icomoon;
+          font-size: 30px;
+        }
+
+        @include range-width(0, 1130px) {
+          display: none;
+        }
+      }
+
+      &.nd_r {
+        float: right;
+
+        &:after {
+          display: inline-block;
+          content: '\e409';
+          font-family: icomoon;
+          font-size: 30px;
+        }
+
+        @include range-width(0, 1130px) {
+          display: none;
+        }
+      }
+
+      &.nd_a {
+        display: none;
+
+        @include range-width(0, 1130px) {
+          display: inline-block;
+          width: 100%;
+          margin-top: 10px;
+
+          &.ml {
+            width: calc(50% - 5px);
+            float: left;
+            margin-right: 5px;
+
+            &:before {
+              display: inline-block;
+              content: '\e408';
+              font-family: icomoon;
+              font-size: 30px;
+            }
+          }
+
+          &.mr {
+            width: calc(50% - 5px);
+            float: right;
+            margin-left: 5px;
+
+            &:after {
+              display: inline-block;
+              content: '\e409';
+              font-family: icomoon;
+              font-size: 30px;
+            }
+          }
+        }    
+      }
+
+      &:hover, &:active {
+        color: white;
+        background-color: rgba(244, 36, 55, 1.00);
+      }
+    }
+
+    @include range-width(0, 1130px) {
+      width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
