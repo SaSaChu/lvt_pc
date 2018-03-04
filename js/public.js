@@ -165,9 +165,12 @@ $(function () {
       $(this).parents ('.check_boxs').addClass ('s');
     });
   });
-  $('.main_d2s a[data-for]').click (function () {
+  $('*[data-for]').click (function () {
     var $fb = $('#fboxs .fbox.' + $(this).data ('for'));
     if (!$fb.length) return;
+    if ($(this).data ('for') === 'fbx') {
+      $fb.empty ().append ($('<img />').attr ('src', $(this).next ().attr ('src')));
+    }
     $('#fboxs').addClass ('show');
     $fb.addClass ('show');
   });

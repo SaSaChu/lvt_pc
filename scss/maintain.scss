@@ -285,7 +285,7 @@
   .close {
     position: fixed;
     left: calc(50% + 530px / 2);
-    top: calc(50% - 440px - 32px);
+    top: 16px;
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -333,6 +333,14 @@
 
     &.show {
       display: inline-block;
+    }
+    &.fbx {
+      border-top: 0;
+      padding: 0;
+      > img {
+        width: 100%;
+      }
+      height: auto;
     }
 
     .mf_boxs1, .mf_boxs2, .mf_boxs3 {
