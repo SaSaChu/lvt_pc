@@ -42,9 +42,7 @@
 
       &:hover, &:active {
         border: 1px solid rgba(245, 41, 62, .5);
-        -webkit-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
-        -moz-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
-        box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+        @include box-shadow(0 0 10px rgba(245, 41, 62, .2));
       }
     }
     select::-ms-expand { display: none; }
@@ -154,16 +152,12 @@
     max-width: 850px;
     background-color: white;
     @include border-radius(2px);
-    -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
-    -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
-    box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+    @include box-shadow(0 0 10px rgba(39, 40, 34, .2));
     padding: 50px 30px;
 
     &.oper_b {
       padding: 0;
-      -webkit-box-shadow: 0;
-      -moz-box-shadow: 0;
-      box-shadow: 0 ;
+      @include box-shadow(0 );
 
       img {
         max-width: 850px;
@@ -435,7 +429,6 @@
     }
 
     > div {
-
       a {
         padding: 0;
         background-color: black;
@@ -471,25 +464,45 @@
   
   > div {
     display: inline-block;
-    width: calc((100% - 16px * 5) / 6);
     float: left;
-    margin: 0 16px 0 0;
     position: relative;
 
-    @include range-width(0, 450px) {
-      width: calc((100% - 16px) / 2); 
+    @include range-width(0, 550px) {
+      margin: 0;
+      margin-right: 16px;
+      width: calc((100% - 16px * 1) / 2);
 
-      &:nth-child(2n+1) {
-        float: left;
-        margin: 0 8px 10px 0;
+      &:nth-child(2n + 2) {
+        margin: 0;
       }
+      &:nth-child(n + 3) {
+        margin-top: 20px;
+      }
+    }
+    @include range-width(550px, 850px) {
+      margin: 0;
+      margin-right: 16px;
+      width: calc((100% - 16px * 3) / 4);
 
-      &:nth-child(2n+2) {
-        margin: 0 0 10px 8px;
-        float: right;
+      &:nth-child(4n + 4) {
+        margin: 0;
+      }
+      &:nth-child(n + 5) {
+        margin-top: 20px;
       }
     }
 
+    @include range-width(850px) {
+      width: calc((100% - 16px * 5) / 6);
+      margin: 0;
+      margin-right: 16px;
+      &:nth-child(6n + 6) {
+        margin: 0;
+      }
+      &:nth-child(n + 7) {
+        margin-top: 20px;
+      }
+    }
     // &:first-child {
     //   float: left;
     //   margin: 0 8px 0 0;
@@ -499,9 +512,9 @@
     //   }
     // }
 
-    &:last-child {
-      margin: 0;
-    }
+    // &:last-child {
+    //   
+    // }
 
     a {
       display: inline-block;
@@ -510,9 +523,7 @@
       cursor: pointer;
       background-color: white;
       @include border-radius(2px);
-      -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
-      -moz-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
-      box-shadow: 0 0 10px rgba(39, 40, 34, .2);
+      @include box-shadow(0 0 10px rgba(39, 40, 34, .2));
       padding: 15px;
 
       img {
@@ -535,9 +546,7 @@
           left: 0;
           @include border-radius(2px);
           border: 1px solid rgba(245, 41, 62, .5);
-          -webkit-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
-          -moz-box-shadow: 0 0 10px rgba(245, 41, 62, .2);
-          box-shadow: 0 0 10px rgba(245, 41, 62, .2);
+          @include box-shadow(0 0 10px rgba(245, 41, 62, .2));
         }
       }
     }
@@ -558,8 +567,14 @@
     color: black;
     text-align: left;
   }
+  &.s {
+    display: inline-block;
+  }
 }
 .cts {
+  &.h {
+    display: none;
+  }
   @for $i from 0 through 25 {
     &[data-n="#{$i}"] {
       ~ .ct {

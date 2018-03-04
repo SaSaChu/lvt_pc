@@ -97,22 +97,37 @@ $(function () {
     var $that = $(this);
 
     if ($that.next ().hasClass ('pro_list')) {
-
       $that.next ().find ('> div > a').click (function () {
-
         $(this).addClass ('pro_ac').parent ().siblings ().find ('> a').removeClass ('pro_ac');
         $that.find ('img').attr ('src', $(this).find ('img').attr ('src'));
-        console.error ('x');
-        
       });
     }
   });
+
   $('.ct').each (function () {
     var $that = $(this);
     $that.find ('.pro_list.oper>div[data-pc][data-mobile]').click (function () {
       var $t = $that.find ('.pro_boxs .pro_pic.oper_b');
       $t.find ('.i1').attr ('src', $(this).data ('pc'));
       $t.find ('.i2').attr ('src', $(this).data ('mobile'));
+    });
+    $that.find ('.pro_arrow.pal').click (function () {
+      var $t = $that.find ('.pro_list.oper>div[data-pc][data-mobile]');
+      var $u = $that.find ('.pro_list.oper>div[data-pc][data-mobile] a.pro_ac').parent ();
+
+      if ($u.prev ().length)
+        $u.prev ().find ('>a').click ();
+      else
+        $t.last ().find ('>a').click ();
+    });
+    $that.find ('.pro_arrow.par').click (function () {
+      var $t = $that.find ('.pro_list.oper>div[data-pc][data-mobile]');
+      var $u = $that.find ('.pro_list.oper>div[data-pc][data-mobile] a.pro_ac').parent ();
+
+      if ($u.next ().length)
+        $u.next ().find ('>a').click ();
+      else
+        $t.first ().find ('>a').click ();
     });
   });
 
@@ -121,10 +136,16 @@ $(function () {
     $(this).find ('.pro_tab_boxs > div > a').click (function () {
       $that.attr ('data-n', $(this).parent ().index ());
       $(this).addClass ('oper_ac').parent ().siblings ().find ('> a').removeClass ('oper_ac');
-    });
-    if ($that.next ().hasClass ('ct'))
-      $that.next ().find ('.pro_list.oper').first ().find ('>div[data-pc][data-mobile]').first ().click ();
+      
+      $that.parent ().find ('.ct').eq ($(this).parent ().index ()).find ('.pro_list.oper').find ('>div[data-pc][data-mobile]').first ().find ('>a').click ();
+      // console.error ($(this).parent ().index () + 1);
+      
+    }).first ().click ();
+
+    // if ($that.next ().hasClass ('ct'))
+    //   $that.next ().find ('.pro_list.oper').first ().find ('>div[data-pc][data-mobile] > a').first ().click ();
   });
+
   $('.main_tab').each (function () {
     var $that = $(this);
     $that.click (function () {
