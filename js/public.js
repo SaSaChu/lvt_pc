@@ -26,6 +26,11 @@ $(function () {
   });
 
 
+  $('.ad_close').click(function() {
+    $('.ad_boxs').addClass('ad_close');
+  });
+
+
   $('.select').click(function() {
     $('.select_open').toggleClass('select_show');
 
