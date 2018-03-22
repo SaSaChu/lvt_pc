@@ -80,13 +80,14 @@ $(function () {
       var n = parseInt ($banner_pic.attr ('data-n'), 10);
       $banner_pic.attr ('data-n', --n < 0 ? $div.length - 1 : n);
     });
-    $that.find ('.b_r').click (function () {
+    var $t = $that.find ('.b_r').click (function () {
       var n = parseInt ($banner_pic.attr ('data-n'), 10);
       $banner_pic.attr ('data-n', ++n >= $div.length ? 0 : n);
     });
     $that.find ('.b_d').empty ().append (Array.apply (null, Array ($div.length)).map (function () {
       return $('<p />').click (function () { $banner_pic.attr ('data-n', $(this).index ()); });
     }));
+    setInterval (function () {$t.click ();}, 5000);
   });
 
   // 回到上面按鈕
@@ -109,7 +110,19 @@ $(function () {
     }
   });
 
-  $('.ct').each (function () {
+  $('.ct.oa').each (function () {
+    var $that = $(this).attr ('data-i', 1);
+    var l = $that.find ('.pro_pic > div').length;
+    $that.find ('.pro_arrow.pal').click (function () {
+      var i = parseInt ($that.attr ('data-i'), 10);
+      $that.attr ('data-i', --i < 1 ? l : i);
+    });
+    $that.find ('.pro_arrow.par').click (function () {
+      var i = parseInt ($that.attr ('data-i'), 10);
+      $that.attr ('data-i', ++i > l ? 1 : i);
+    });
+  });
+  $('.ct:not(.oa)').each (function () {
     var $that = $(this);
     $that.find ('.pro_list.oper>div[data-pc][data-mobile]').click (function () {
       var $t = $that.find ('.pro_boxs .pro_pic.oper_b');
