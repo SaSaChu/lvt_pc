@@ -110,12 +110,12 @@ $(function () {
     }
   });
 
-  $('.oacts').each (function () {
-    var $that = $(this);
-    $that.find ('a').click (function () {
-      $(this).addClass ('oper_ac').siblings ().removeClass ('oper_ac');
-    });
-  });
+  // $('.oacts').each (function () {
+  //   // var $that = $(this);
+  //   // $that.find ('a').click (function () {
+  //   //   $(this).addClass ('oper_ac').siblings ().removeClass ('oper_ac');
+  //   // });
+  // });
   $('.ct.oa').each (function () {
     var $that = $(this).attr ('data-i', 1);
     var l = $that.find ('.pro_pic > div').length;
