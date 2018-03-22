@@ -572,6 +572,9 @@
   }
 }
 .cts {
+  ~ .oa {
+    display: none;
+  }
   &.h {
     display: none;
   }
