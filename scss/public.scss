@@ -109,7 +109,7 @@ $c1: rgba(27, 27, 27, 1.00);
         max-width: 230px;
         padding-left: 10px;
       }
-      
+
       &:after {
         $h: 80px / 2;
         content: '';
@@ -119,7 +119,7 @@ $c1: rgba(27, 27, 27, 1.00);
         display: inline-block;
         width: $h;
         height: 100%;
-        
+
         border: $h solid rgba(246, 47, 70, 1.00);
         border-left: $h solid $c1;
         border-bottom: $h solid $c1;
@@ -150,7 +150,7 @@ $c1: rgba(27, 27, 27, 1.00);
             padding: 18px 0;
           }
         }
-      }    
+      }
     }
 
     .menu {
@@ -191,7 +191,7 @@ $c1: rgba(27, 27, 27, 1.00);
                 background-color: rgba(67, 67, 67, 1.00);
               }
               @include transition(background-color .3s);
-              
+
             }
           }
         }
@@ -280,12 +280,12 @@ $c1: rgba(27, 27, 27, 1.00);
             height: 3px;
             width: 100%;
             background: black;
-            
+
             left: 0;
             @include opacity(1);
             @include rotate(0deg);
             @include transition(all .25s ease-in-out);
-            
+
 
             &:nth-child(1) {
               top: 0px;
@@ -368,7 +368,7 @@ $c1: rgba(27, 27, 27, 1.00);
   overflow: auto;
   @include transition(opacity .3s, right .3s);
   text-align: left;
-  padding: 15px 0; 
+  padding: 15px 0;
   @include range-width(0, 450px) {
     top: 60px;
     height: calc(100% - 60px);
@@ -376,7 +376,7 @@ $c1: rgba(27, 27, 27, 1.00);
     // height: calc(100% - 65px);
   }
   &.s_menu {
-    right: 0;    
+    right: 0;
   }
   > span, > a, > div > a {
     display: inline-block;
@@ -446,7 +446,7 @@ $c1: rgba(27, 27, 27, 1.00);
   z-index: -10;
   height: calc(100% - 80px);
   width: 100%;
-  
+
   @include range-width(0, 450px) {
     top: 60px;
     height: calc(100% - 60px);
@@ -468,7 +468,7 @@ $c1: rgba(27, 27, 27, 1.00);
   width: 100%;
   height: 100%;
   max-width: 1200px;
-  padding: 30px 0; 
+  padding: 30px 0;
 
   @include range-width(1030px, 1220px) {
     padding: 15px 20px;
@@ -551,7 +551,7 @@ $c1: rgba(27, 27, 27, 1.00);
               > div {
                 @for $j from 1 through 25 {
                   &:nth-child(#{$j}) {
-                    left: #{(-1 - $i + $j) * 100%}; 
+                    left: #{(-1 - $i + $j) * 100%};
                   }
                 }
               }
@@ -665,7 +665,7 @@ $c1: rgba(27, 27, 27, 1.00);
         }
       }
       select::-ms-expand { display: none; }
-       
+
 
       // .select_boxs {
       //   display: inline-block;
@@ -777,14 +777,14 @@ $c1: rgba(27, 27, 27, 1.00);
       //     }
       //   }
       // }
-      
+
 
       button {
         display: inline-block;
         cursor: pointer;
         padding: 10px 30px;
         color: white;
-        font-size: 18px; 
+        font-size: 18px;
         background-color: rgba(197, 27, 42, 1.00);
         float: right;
         position: absolute;
@@ -806,7 +806,7 @@ $c1: rgba(27, 27, 27, 1.00);
         @include range-width(1030px, 1100px) {
           font-size: 18px;
           padding: 5px 30px;
-          bottom: 15px; 
+          bottom: 15px;
         }
 
         @include range-width(0, 450px) {
@@ -847,7 +847,7 @@ $c1: rgba(27, 27, 27, 1.00);
           width: 100%;
           text-align: left;
           @include clearfix();
-          
+
           .new_tag_box {
             display: inline-block;
             float: left;
@@ -859,7 +859,7 @@ $c1: rgba(27, 27, 27, 1.00);
               text-decoration: none;
               cursor: pointer;
               @include transition(all .3s);
-              
+
               &:hover, &:active, &.in_ac {
                 color: rgba(251, 30, 45, 1.00);
               }
@@ -876,7 +876,7 @@ $c1: rgba(27, 27, 27, 1.00);
                 display: none;
               }
             }
-          }         
+          }
         }
 
         .news_boxs {
@@ -890,7 +890,7 @@ $c1: rgba(27, 27, 27, 1.00);
             position: absolute;
             top: 0;
             @include transition(left .3s);
-            
+
             display: inline-block;
             width: 100%;
             height: 100%;
@@ -902,13 +902,13 @@ $c1: rgba(27, 27, 27, 1.00);
               > div {
                 @for $j from 1 through 10 {
                   &:nth-child(#{$j}) {
-                    left: #{(-1 - $i + $j) * 100%}; 
+                    left: #{(-1 - $i + $j) * 100%};
                   }
                 }
               }
             }
           }
-          
+
           .new_box {
             display: inline-block;
             width: calc(50% - 28px);
@@ -924,19 +924,19 @@ $c1: rgba(27, 27, 27, 1.00);
                 border-bottom: none;
               }
             }
-            
+
             &:nth-child(1), &:nth-child(3) {
               margin-right: 28px;
 
               @include range-width(0, 450px) {
-                margin-right: 0; 
+                margin-right: 0;
               }
             }
             &:nth-child(2), &:nth-child(4) {
               margin-left: 28px;
 
               @include range-width(0, 450px) {
-                margin-left: 0; 
+                margin-left: 0;
               }
             }
             &:nth-child(3), &:nth-child(4) {
@@ -944,7 +944,7 @@ $c1: rgba(27, 27, 27, 1.00);
               padding-bottom: 0;
 
               @include range-width(0, 450px) {
-                border-top: none; 
+                border-top: none;
                 padding-bottom: 20px;
               }
             }
@@ -973,7 +973,7 @@ $c1: rgba(27, 27, 27, 1.00);
                 height: 64px;
                 overflow: hidden;
               }
-              
+
               &:hover, &:active {
                 color: rgba(190, 24, 38, 1.00);
               }
@@ -1037,7 +1037,7 @@ $c1: rgba(27, 27, 27, 1.00);
             > div {
               @for $j from 1 through 25 {
                 &:nth-child(#{$j}) {
-                  left: #{(-1 - $i + $j) * 100%}; 
+                  left: #{(-1 - $i + $j) * 100%};
                 }
               }
             }
@@ -1207,7 +1207,7 @@ $c1: rgba(27, 27, 27, 1.00);
         padding: 10px 0;
         margin: 0;
         color: black;
-        font-size: 18px; 
+        font-size: 18px;
         @include overflow-docx3();
         @include range-width(0, 650px) {
           font-size: 14px;
@@ -1230,7 +1230,7 @@ $c1: rgba(27, 27, 27, 1.00);
           > * {
             @for $j from 1 through 30 {
               &:nth-child(#{$j}) {
-                left: calc(#{(-1 - $i + $j)} * (100% / 6)); 
+                left: calc(#{(-1 - $i + $j)} * (100% / 6));
               }
             }
           }
@@ -1245,7 +1245,7 @@ $c1: rgba(27, 27, 27, 1.00);
             > * {
               @for $j from 1 through 30 {
                 &:nth-child(#{$j}) {
-                  left: calc(#{(-1 - $i + $j)} * (100% / 2)); 
+                  left: calc(#{(-1 - $i + $j)} * (100% / 2));
                 }
               }
             }
@@ -1261,7 +1261,7 @@ $c1: rgba(27, 27, 27, 1.00);
             > * {
               @for $j from 1 through 30 {
                 &:nth-child(#{$j}) {
-                  left: calc(#{(-1 - $i + $j)} * (100% / 3)); 
+                  left: calc(#{(-1 - $i + $j)} * (100% / 3));
                 }
               }
             }
@@ -1277,7 +1277,7 @@ $c1: rgba(27, 27, 27, 1.00);
             > * {
               @for $j from 1 through 30 {
                 &:nth-child(#{$j}) {
-                  left: calc(#{(-1 - $i + $j)} * (100% / 4)); 
+                  left: calc(#{(-1 - $i + $j)} * (100% / 4));
                 }
               }
             }
@@ -1293,7 +1293,7 @@ $c1: rgba(27, 27, 27, 1.00);
             > * {
               @for $j from 1 through 30 {
                 &:nth-child(#{$j}) {
-                  left: calc(#{(-1 - $i + $j)} * (100% / 5)); 
+                  left: calc(#{(-1 - $i + $j)} * (100% / 5));
                 }
               }
             }
@@ -1330,7 +1330,7 @@ $c1: rgba(27, 27, 27, 1.00);
     display: inline-block;
     width: 100%;
     @include clearfix();
-    
+
     .two_l {
       display: inline-block;
       width: calc(100% - 60px);
@@ -1381,7 +1381,7 @@ footer {
     max-width: 1200px;
     padding: 0 10px;
     @include clearfix();
-    
+
     @include range-width(450px, 1200px) {
       padding: 0 20px;
     }
@@ -1401,7 +1401,7 @@ footer {
           float: left;
           text-align: left;
         }
-        
+
         .f_t1 {
           font-weight: 600;
         }
@@ -1654,9 +1654,28 @@ footer {
     overflow: hidden;
     position: relative;
 
-    img {
+    a {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 0;
       width: 100%;
       max-width: 1200px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    $c: 10;
+    @for $j from 2 through $c {
+      &[data-i = "#{$j}"] {
+        @for $i from 2 through $c {
+          a:nth-child( #{$i} ) {
+            left: calc( (#{$i} - #{$j} ) * 100% );
+          }
+        }
+      }
     }
 
     .ad_close {
@@ -1668,6 +1687,7 @@ footer {
       position: absolute;
       top: 0;
       right: 0;
+      z-index: 5;
 
       &.icon-close {
         display: inline-block;
@@ -1678,28 +1698,3 @@ footer {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
