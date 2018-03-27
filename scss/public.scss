@@ -1668,12 +1668,51 @@ footer {
       position: absolute;
       top: 0;
       right: 0;
+      z-index: 2;
 
       &.icon-close {
         display: inline-block;
         font-size: 40px;
         color: black;
         line-height: 40px;
+      }
+    }
+    .imgs {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      $c: 10;
+      > * {
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        @include transition(left .3s);
+
+        > img {
+          width: 100%;
+        }
+        @for $j from 1 through $c {
+          &:nth-child(#{$j}) {
+            left: ($j - 1) * 100%;
+          }
+        }
+      }
+      
+      @for $i from 1 through $c {
+        &[data-i='#{$i}'] {
+          > * {
+            @for $j from 1 through $c {
+              &:nth-child(#{$j}) {
+                left: ($j - $i) * 100%;
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -30,6 +30,15 @@ $(function () {
     $('.ad_boxs').addClass('ad_close');
   });
 
+  $('.ad_boxs .imgs').each (function () {
+    var $that = $(this).attr ('data-i', 1);
+    var l = $that.find ('> *').imgLiquid ({ verticalAlign:'top' }).length;
+    setInterval (function () {
+      var i = parseInt ($that.attr ('data-i'), 10);
+      $that.attr ('data-i', ++i > l ? 1 : i);
+    }, 5000);
+  });
+
 
   $('.select').click(function() {
     $('.select_open').toggleClass('select_show');
