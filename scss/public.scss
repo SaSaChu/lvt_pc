@@ -1653,6 +1653,7 @@ footer {
     border: 10px solid white;
     overflow: hidden;
     position: relative;
+    @include transition(left .3s);
 
     a {
       position: absolute;
