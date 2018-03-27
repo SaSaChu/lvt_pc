@@ -1653,7 +1653,6 @@ footer {
     border: 10px solid white;
     overflow: hidden;
     position: relative;
-    @include transition(left .3s);
 
     a {
       position: absolute;
@@ -1662,6 +1661,7 @@ footer {
       left: 0;
       width: 100%;
       max-width: 1200px;
+      @include transition(left .3s);
 
       img {
         width: 100%;
