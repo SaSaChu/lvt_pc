@@ -631,9 +631,11 @@ $c1: rgba(27, 27, 27, 1.00);
       select {
         display: inline-block;
         width: 100%;
+        height: 50px;
+        line-height: 50px;
         font-size: 18px;
         margin-bottom: 10px;
-        padding: 10px 15px;
+        padding: 0 15px;
         background-color: rgba(242, 242, 242, 1.00);
         border: 1px solid rgba(233, 233, 233, 1.00);
         @include border-radius(2px);
