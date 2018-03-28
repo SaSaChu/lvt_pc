@@ -5,7 +5,16 @@
  */
 
 $(function () {
-
+  // 底部banner輪播
+  var $box = $('div.ad_box');
+  var $l = $box.find('a').length+1;
+  var $i = parseInt( $box.attr('data-i') );
+  setInterval( function() {
+    if( ++$i > $l ) {
+      $i = 2;
+    }
+    $box.attr( 'data-i', $i );
+  }, 5000);
 
   // 漢堡變換 + menu滑出
   $(document).ready(function() {
@@ -160,10 +169,10 @@ $(function () {
     $(this).find ('.pro_tab_boxs > div > a').click (function () {
       $that.attr ('data-n', $(this).parent ().index ());
       $(this).addClass ('oper_ac').parent ().siblings ().find ('> a').removeClass ('oper_ac');
-      
+
       $that.parent ().find ('.ct').eq ($(this).parent ().index ()).find ('.pro_list.oper').find ('>div[data-pc][data-mobile]').first ().find ('>a').click ();
       // console.error ($(this).parent ().index () + 1);
-      
+
     }).first ().click ();
 
     // if ($that.next ().hasClass ('ct'))
@@ -201,6 +210,5 @@ $(function () {
   $('#fboxs .close').click (function () {
     $('#fboxs, #fboxs .fbox').removeClass ('show');
   });
-
 
 });
