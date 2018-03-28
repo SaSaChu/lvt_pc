@@ -1668,7 +1668,7 @@ footer {
       }
     }
 
-    $c: 10;
+    $c: 16;
     @for $j from 2 through $c {
       &[data-i = "#{$j}"] {
         @for $i from 2 through $c {
