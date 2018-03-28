@@ -832,5 +832,16 @@
 }
 
 .ck_article {
+  padding: 20px;
 
+  p {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    text-align: left;
+  }
 }
+
+
