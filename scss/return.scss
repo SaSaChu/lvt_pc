@@ -235,6 +235,83 @@
         }
       }
 
+      .code_box {
+        display: inline-block;
+        float: left;
+        margin-top: 40px;
+        height: 45px;
+        padding-left: 20px;
+
+        @include range-width(0, 720px) {
+          width: 100%;
+          padding-left: 0;
+        }
+
+        input {
+          display: inline-block;
+          float: left;
+          width: 150px;
+          padding: 10px;
+          background-color: white;
+          border: 1px solid rgba(235, 235, 235, 1.00);
+          outline: 0;
+          @include border-radius(3px);
+          color: rgba(150, 150, 150, 1.00);
+          font-size: 18px;
+
+          @include range-width(0, 585px) {
+            font-size: 16px;
+            padding: 10px;
+            width: 50%;
+            float: left;
+            width: 120px;
+          }
+
+          &:hover, &:active {
+            border: 1px solid rgba(245, 41, 62, .5);
+            @include box-shadow(0 0 10px rgba(245, 41, 62, .2));
+          }
+        }
+
+        .code {
+          display: inline-block;
+          width: 120px;
+          // background-color: rgba(255, 245, 142, 1.00);
+          color: black;
+          font-size: 18px;
+          @include border-radius(3px);
+          padding: 10px;
+          margin-left: 15px;
+
+          @include range-width(0, 585px) {
+            font-size: 16px;
+            padding: 10px;
+            width: calc(50% - 15px);
+            float: left;
+          }
+        }
+
+        a {
+          display: inline-block;
+          cursor: pointer;
+          text-decoration: underline;
+          color: rgba(29, 81, 125, 1.00);
+          font-size: 14px;
+          line-height: 50px;
+          margin-left: 15px;
+          @include transition(all .3s);
+          
+          &:hover, &:active {
+            color: rgba(29, 81, 125, .9);
+          }
+
+          @include range-width(0, 585px) {
+            text-align: right;
+            margin-left: 0;
+          }
+        }
+      }
+
       button {
         display: inline-block;
         float: right;
@@ -255,6 +332,7 @@
         }
 
         @include range-width(0, 885px) {
+          width: 100%;
           margin-bottom: 40px;
         }
       }
