@@ -219,6 +219,18 @@
                     margin-top: 6px;
                     margin-right: 5px;
                   }
+
+                  a {
+                    display: inline-block;
+                    color: rgba(102, 101, 101, 1.00);
+                    text-decoration: underline;
+                    cursor: pointer;
+                    @include transition(all .3s);
+                    
+                    &:hover, &:active {
+                      color: rgba(251, 30, 46, 1.00);
+                    }
+                  }
                 }
               }
 
