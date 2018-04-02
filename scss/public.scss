@@ -504,6 +504,10 @@ $c1: rgba(27, 27, 27, 1.00);
       padding: 25px 20px;
       position: relative;
 
+      @include range-width(0, 750px) {
+        height: auto;
+      }
+
       // 影片專區
       &.cl_2 {
         float: right;
@@ -658,12 +662,22 @@ $c1: rgba(27, 27, 27, 1.00);
           width: calc(50% - 5px);
           float: left;
           margin-right: 5px;
+
+          @include range-width(0, 750px) {
+            width: 100%;
+            margin-right: 0;
+          }
         }
 
         &:nth-child(4), &:nth-child(6), {
           width: calc(50% - 5px);
           float: right;
           margin-left: 5px;
+
+          @include range-width(0, 750px) {
+            width: 100%;
+            margin-left: 0;
+          }
         }
       }
       select::-ms-expand { display: none; }
@@ -811,7 +825,7 @@ $c1: rgba(27, 27, 27, 1.00);
           bottom: 15px;
         }
 
-        @include range-width(0, 450px) {
+        @include range-width(0, 750px) {
           width: 100%;
           position: static;
           margin-top: 10px;
