@@ -73,8 +73,8 @@ $c1: rgba(27, 27, 27, 1.00);
     width: calc(50% - 1200px / 2);
     background-color: $c1;
 
-    @include range-width(0, 450px) {
-      height: 60px;
+    @include range-width(0, 1030px) {
+      height: 80px;
     }
   }
 
@@ -91,12 +91,14 @@ $c1: rgba(27, 27, 27, 1.00);
       display: inline-block;
       height: 80px;
 
-      @include range-width(0, 450px) {
-        height: 60px;
+      @include range-width(0, 1030px) {
+        height: 80px;
       }
     }
     .logo {
-      width: 390px;
+      display: inline-block;
+      width: 100%;
+      max-width: 468px;
       position: relative;
       background-color: $c1;
       @include clearfix();
@@ -105,10 +107,15 @@ $c1: rgba(27, 27, 27, 1.00);
         padding-left: 20px;
       }
 
-      @include range-width(0, 450px) {
-        max-width: 230px;
+      @include range-width(0, 1030px) {
+        max-width: 275px;
         padding-left: 10px;
       }
+
+      // @include range-width(0, 450px) {
+      //   max-width: 230px;
+      //   padding-left: 10px;
+      // }
 
       &:after {
         $h: 80px / 2;
@@ -125,7 +132,8 @@ $c1: rgba(27, 27, 27, 1.00);
         border-bottom: $h solid $c1;
 
         @include range-width(0, 450px) {
-          $h: 60px / 2;
+          $h: 80px / 2;
+          right: 0 - $h;
           width: $h;
           border: $h solid #fb2234;
           border-left: $h solid $c1;
@@ -139,11 +147,29 @@ $c1: rgba(27, 27, 27, 1.00);
         cursor: pointer;
         outline: 0;
 
+        @include range-width(0, 1030px) {
+          display: none;
+        }
+
+        &.ml {
+          @include range-width(1030px) {
+            display: none;
+          }
+
+          display: inline-block;
+
+          img {
+            width: 100%;
+            max-width: 220px;
+            padding: 13px 0;
+          }
+        }
+
         img {
           float: left;
           width: 100%;
-          max-width: 323px;
-          padding: 20px 0;
+          max-width: 468px;
+          padding: 15px 0;
 
           @include range-width(0, 450px) {
             max-width: 200px;
@@ -154,17 +180,22 @@ $c1: rgba(27, 27, 27, 1.00);
     }
 
     .menu {
-      width: calc(100% - 390px);
+      width: calc(100% - 468px);
       @include clearfix();
 
       @include range-width(450px, 1200px) {
         padding-right: 20px;
       }
 
-      @include range-width(0, 450px) {
-        width: calc(100% - 230px);
+      @include range-width(0, 1030px) {
+        width: calc(100% - 275px);
         padding-right: 10px;
       }
+
+      // @include range-width(0, 450px) {
+      //   width: calc(100% - 230px);
+      //   padding-right: 10px;
+      // }
 
       > span {
         width: 165px;
@@ -199,7 +230,7 @@ $c1: rgba(27, 27, 27, 1.00);
       >span, >a {
         display: inline-block;
         cursor: pointer;
-        margin-left: 50px;
+        margin-left: 30px;
         font-size: 16px;
         float: right;
         color: white;
@@ -208,16 +239,17 @@ $c1: rgba(27, 27, 27, 1.00);
         @include transition(all .3s);
         position: relative;
 
-        @include range-width(1065px, 1200px) {
-          margin-left: 25px;
+        @include range-width(1070px, 1200px) {
+          font-size: 15px;
+          margin-left: 15px;
         }
 
-        @include range-width(1030px, 1065px) {
-          margin-left: 20px;
-        }
+        // @include range-width(1030px, 1065px) {
+        //   margin-left: 15px;
+        // }
 
         // pc轉手機，menu隱藏
-        @include range-width(0, 1030px) {
+        @include range-width(0, 1070px) {
           display: none;
         }
 
@@ -248,7 +280,7 @@ $c1: rgba(27, 27, 27, 1.00);
       }
 
       .menu_boxs {
-        @include range-width(0, 1030px) {
+        @include range-width(0, 1070px) {
           display: inline-block;
         }
 
@@ -256,7 +288,11 @@ $c1: rgba(27, 27, 27, 1.00);
         float: right;
         padding-top: 28px;
 
-        @include range-width(0, 450px) {
+        @include range-width(350px, 450px) {
+          padding-top: 30px;
+        }
+
+        @include range-width(0, 350px) {
           padding-top: 18px;
         }
 
@@ -352,7 +388,7 @@ $c1: rgba(27, 27, 27, 1.00);
 #r_menu_boxs {
   display: none;
 
-  @include range-width(0, 1030px) {
+  @include range-width(0, 1070px) {
     display: inline-block;
   }
 
@@ -370,8 +406,8 @@ $c1: rgba(27, 27, 27, 1.00);
   text-align: left;
   padding: 15px 0;
   @include range-width(0, 450px) {
-    top: 60px;
-    height: calc(100% - 60px);
+    top: 80px;
+    height: calc(100% - 80px);
     // margin-top: 60px;
     // height: calc(100% - 65px);
   }
@@ -436,7 +472,7 @@ $c1: rgba(27, 27, 27, 1.00);
 #menu_back {
   display: none;
 
-  @include range-width(0, 1030px) {
+  @include range-width(0, 1070px) {
     display: inline-block;
   }
 
@@ -448,8 +484,8 @@ $c1: rgba(27, 27, 27, 1.00);
   width: 100%;
 
   @include range-width(0, 450px) {
-    top: 60px;
-    height: calc(100% - 60px);
+    top: 80px;
+    height: calc(100% - 80px);
   }
   @include transition(opacity .4s, left .3s);
 
@@ -495,7 +531,7 @@ $c1: rgba(27, 27, 27, 1.00);
       width: calc(100% - 815px - 20px);
       margin-right: 20px;
       float: left;
-      height: 395px;
+      height: 515px;
       background-color: white;
       @include border-radius(2px);
       -webkit-box-shadow: 0 0 10px rgba(39, 40, 34, .2);
@@ -658,27 +694,27 @@ $c1: rgba(27, 27, 27, 1.00);
           box-shadow: 0 0 10px rgba(245, 41, 62, .2);
         }
 
-        &:nth-child(3), &:nth-child(5), {
-          width: calc(50% - 5px);
-          float: left;
-          margin-right: 5px;
+        // &:nth-child(3), &:nth-child(5), {
+        //   width: calc(50% - 5px);
+        //   float: left;
+        //   margin-right: 5px;
 
-          @include range-width(0, 750px) {
-            width: 100%;
-            margin-right: 0;
-          }
-        }
+        //   @include range-width(0, 750px) {
+        //     width: 100%;
+        //     margin-right: 0;
+        //   }
+        // }
 
-        &:nth-child(4), &:nth-child(6), {
-          width: calc(50% - 5px);
-          float: right;
-          margin-left: 5px;
+        // &:nth-child(4), &:nth-child(6), {
+        //   width: calc(50% - 5px);
+        //   float: right;
+        //   margin-left: 5px;
 
-          @include range-width(0, 750px) {
-            width: 100%;
-            margin-left: 0;
-          }
-        }
+        //   @include range-width(0, 750px) {
+        //     width: 100%;
+        //     margin-left: 0;
+        //   }
+        // }
       }
       select::-ms-expand { display: none; }
 
@@ -837,7 +873,7 @@ $c1: rgba(27, 27, 27, 1.00);
     .cent01_r {
       display: inline-block;
       width: 815px;
-      height: 395px;
+      height: 515px;
       float: right;
       overflow: hidden;
       position: relative;
