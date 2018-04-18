@@ -198,6 +198,7 @@ $(function () {
       $(this).parents ('.check_boxs').addClass ('s');
     });
   });
+
   $('*[data-for]').click (function () {
     var $fb = $('#fboxs .fbox.' + $(this).data ('for'));
     if (!$fb.length) return;
@@ -210,5 +211,6 @@ $(function () {
   $('#fboxs .close').click (function () {
     $('#fboxs, #fboxs .fbox').removeClass ('show');
   });
+
 
 });
