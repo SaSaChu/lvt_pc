@@ -39,32 +39,58 @@
 
       .main_title_boxs {
         text-align: left;
-
+        @include clearfix();
+        
         @include range-width(0, 450px) {
           padding: 20px 10px 0 10px;
         }
 
-        p {
+        div {
           display: inline-block;
-          width: 100%;
-          padding: 0 0 0 20px;
-          margin: 0 0 10px 0;
-          font-size: 18px;
-          color: black;
+          width: calc(100% - 155px);
+          float: left;
 
-          &.doll {
-            margin: 0;
-            padding: 0;
+          p {
+            display: inline-block;
+            width: 100%;
+            padding: 0 0 0 20px;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: black;
 
-            &:before {
-              display: inline-block;
-              content: '\e903';
-              font-family: icomoon;
-              color: rgba(150, 150, 150, 1.00);
-              font-size: 13px;
-              margin-top: 6px;
-              margin-right: 5px;
+            &.doll {
+              margin: 0;
+              padding: 0;
+
+              &:before {
+                display: inline-block;
+                content: '\e903';
+                font-family: icomoon;
+                color: rgba(150, 150, 150, 1.00);
+                font-size: 13px;
+                margin-top: 6px;
+                margin-right: 5px;
+              }
             }
+          }
+        }
+        
+        button {
+          display: inline-block;
+          cursor: pointer;
+          width: 155px;
+          padding: 10px 20px;
+          background-color: rgba(19, 71, 180, 1.00);
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          float: left;
+          @include border-radius(2px);
+          border: 0;
+          outline: 0;
+
+          &:hover, &:active {
+            background-color: rgba(19, 71, 180, .9);
           }
         }
       }
