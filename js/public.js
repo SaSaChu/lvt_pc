@@ -200,10 +200,19 @@ $(function () {
   });
 
   $('*[data-for]').click (function () {
+    
     var $fb = $('#fboxs .fbox.' + $(this).data ('for'));
     if (!$fb.length) return;
     if ($(this).data ('for') === 'fbx') {
       $fb.empty ().append ($('<img />').attr ('src', $(this).next ().attr ('src')));
+    }
+    if ($(this).data ('for') === 'fbxv') {
+      console.error ('x');
+      
+      $fb.empty ().append ($('<iframe />').attr ('frameborder', '0')
+                                          .attr ('allow', 'autoplay; encrypted-media')
+                                          .attr ('allowfullscreen', true)
+                                          .attr ('src', $(this).data ('url')));
     }
     $('#fboxs').addClass ('show');
     $fb.addClass ('show');
