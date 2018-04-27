@@ -153,7 +153,7 @@
           margin-right: 5px;
           margin-left: 5px;
           padding: 10px 0;
-          color: rgba(150, 150, 150, 1.00);
+          color: blue;
           font-size: 16px;
           @include border-radius(2px);
           @include transition(all .3s);
@@ -248,7 +248,7 @@
 
                   a {
                     display: inline-block;
-                    color: rgba(102, 101, 101, 1.00);
+                    color: blue;
                     text-decoration: underline;
                     cursor: pointer;
                     @include transition(all .3s);
@@ -285,7 +285,7 @@
                     padding: 0;
                     margin: 0;
                     font-size: 18px;
-                    color: rgba(113, 112, 112, 1.00);
+                    color: blue;
                     text-decoration: underline;
                     @include transition(all .3s);
                     
